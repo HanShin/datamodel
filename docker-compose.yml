@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  local_database:
+    image: library/mysql:8.0
+    environment:
+      MYSQL_DATABASE: data_model
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - 3306:3306
+    security_opt:
+      - seccomp:unconfined
+
+  datamodel:
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - local_database

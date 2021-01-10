@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -27,7 +28,8 @@ public class MovingCompany implements Serializable {
     private Integer movingCompanyId;
 
     @OneToMany(mappedBy = "movingCompany")
-    private List<CustomerFeedback> customerFeedbackList;
+    @Builder.Default
+    private List<CustomerFeedback> customerFeedbackList = new ArrayList<>();
 
     // 업체명
     @Column(name = "company_name")
@@ -75,4 +77,12 @@ public class MovingCompany implements Serializable {
     // 매칭가능여부
     @Column(name = "matching_available")
     private boolean matchingAvailable;
+
+    public void updateMovingCompany(String companyName,String ceoName ,String phone, String address, String detailAddress){
+        this.companyName = companyName;
+        this.ceoName = ceoName;
+        this.phone = phone;
+        this.address = address;
+        this.detailAddress = detailAddress;
+    }
 }

@@ -76,4 +76,11 @@ public class CustomerFeedback implements Serializable {
     // 피드백 내용
     @Column(name = "feedback_contents")
     private String feedbackContents;
+
+    public void updateFeedback(String feedbackContents, SatisfactionType expertSatisfaction, SatisfactionType priceSatisfaction, SatisfactionType kindSatisfaction){
+        this.feedbackContents = feedbackContents;
+        this.expertSatisfaction = expertSatisfaction;
+        this.priceSatisfaction = priceSatisfaction;
+        this.kindSatisfaction = kindSatisfaction;
+    }
 }

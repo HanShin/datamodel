@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Table(name="customer")
@@ -27,7 +28,8 @@ public class Customer implements Serializable {
     private Integer customerId;
 
     @OneToMany(mappedBy = "customer")
-    private List<CustomerFeedback> customerFeedbackList;
+    @Builder.Default
+    private List<CustomerFeedback> customerFeedbackList = new ArrayList<>();
 
     //이름
     @Column(name = "name")
@@ -52,4 +54,9 @@ public class Customer implements Serializable {
     // 마케팅 정보수신 동의여부
     @Column(name = "marketing_agreement")
     private boolean marketingAgreement;
+
+    public void updateUser(String name, String phone){
+        this.name = name;
+        this.phone = phone;
+    }
 }

@@ -64,4 +64,4 @@ $ ./gradlew clean build && docker-compose up
 10. junit 5
 
 ## 그외
-1. Data_model quiz 로 되어있어서 ORM 관련 문제인가 싶어서 쿼리를 직접 작성하진 않고 data-jpa 에서 객체단에서 데이터 저장등 처리하였습니다.
+1. Data_model quiz 로 되어있어서 ORM 관련 문제로 판단하여 쿼리를 직접 작성하진 않고 data-jpa 에서 객체단에서 데이터 저장등 처리하였습니다.

@@ -1,6 +1,5 @@
 spring:
   datasource:
-#    url: jdbc:mysql://localhost:3306/data_model?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&serverTimezone=UTC&createDatabaseIfNotExist=true
     url: jdbc:mysql://local_database:3306/data_model?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&serverTimezone=UTC&createDatabaseIfNotExist=true
     hikari:
       minimum-idle: 2
